@@ -1,50 +1,61 @@
 # Cyber Media & BankData
 
-Aplikasi pengelolaan berita teknologi dan keamanan siber. Proyek ini berisi panel admin untuk mengumpulkan berita dari RSS, meninjau dan mengelola status publikasi, serta situs publik untuk menampilkan berita aktif dan ringkasan statistik.
+A web application for managing technology and cybersecurity news. It includes an admin panel for collecting and reviewing news, managing publication status, and a public-facing site for displaying active stories and statistics.
 
-## Fitur
+## Screenshots
 
-- Mengambil berita dari beberapa RSS teknologi dan keamanan siber.
-- Mengelompokkan berita ke kategori tematik seperti malware, ransomware, dan kebocoran data.
-- Panel admin untuk meninjau, mengedit, menghapus, dan mengatur status berita.
-- Dashboard dengan ringkasan dan grafik berita.
-- Situs Cyber Media untuk menampilkan berita yang berstatus aktif.
+### BankData Admin Panel
 
-## Teknologi
+![BankData admin panel screenshot](screenshot_web/Bankdata.jpg)
 
-- PHP dengan MySQLi
+### Cyber Media Website
+
+![Cyber Media website screenshot](screenshot_web/Cybermedia.png)
+
+## Features
+
+- Collects news from technology and cybersecurity RSS feeds.
+- Groups stories into thematic categories such as malware, ransomware, and data breaches.
+- Provides an admin panel to review, edit, delete, and manage news publication status.
+- Displays news summaries and charts on the dashboard.
+- Publishes active stories on the Cyber Media website.
+
+## Tech Stack
+
+- PHP with MySQLi
 - MySQL
-- Python dengan `requests`, `beautifulsoup4`, dan `PyMySQL`
-- JavaScript untuk grafik dan interaksi antarmuka
+- Python with `requests`, `beautifulsoup4`, and `PyMySQL`
+- JavaScript for charts and interface interactions
 
-## Struktur proyek
+## Project Structure
 
 ```text
-bankdata/    Panel admin dan proses pengambilan berita
-cybermedia/  Situs publik untuk berita aktif
+bankdata/    Admin panel and news collection tools
+cybermedia/  Public site for active news stories
+screenshot_web/ Project screenshots used in this README
 ```
 
-## Menjalankan secara lokal
+## Local Setup
 
-1. Siapkan PHP dengan ekstensi MySQLi, MySQL, dan Python 3.
-2. Buat database dan tabel yang digunakan aplikasi (`db_admin` dan `data_crawl`). Skema database belum disertakan dalam repositori ini.
-3. Atur variabel lingkungan sesuai `.env.example` pada lingkungan PHP dan shell yang menjalankan Python. File `.env.example` adalah dokumentasi nama variabel; PHP tidak memuat file `.env` secara otomatis.
-4. Instal dependensi Python:
+1. Install PHP with the MySQLi extension, MySQL, and Python 3.
+2. Create the databases and tables used by the application (`db_admin` and `data_crawl`). The database schema is not included in this repository.
+3. Configure the environment variables listed in `.env.example` for both the PHP web server and the shell running Python. `.env.example` documents the variable names; PHP does not load a `.env` file automatically.
+4. Install the Python dependencies:
 
    ```bash
    python -m pip install requests beautifulsoup4 PyMySQL
    ```
 
-5. Jalankan aplikasi melalui server PHP lokal dengan `bankdata/` dan `cybermedia/` sebagai direktori aplikasi masing-masing. Pastikan konfigurasi server PHP dan Python memiliki variabel database yang sama.
-6. Jalankan pengambil berita dari direktori `bankdata/`:
+5. Serve `bankdata/` and `cybermedia/` as separate application directories using a local PHP server. Configure the same database environment variables for PHP and Python.
+6. Run the news scraper from the `bankdata/` directory:
 
    ```bash
    python scraping.py
    ```
 
-## Catatan
+## Notes
 
-- Kredensial database tidak disimpan di repository. Jangan commit file `.env` atau memasukkan password ke source code.
-- Log scraper dan file sementara diabaikan oleh Git.
-- Proyek ini dibuat sebagai demonstrasi portofolio. Tinjau keamanan autentikasi, validasi input, dan perlindungan endpoint sebelum menjalankannya di server publik.
-- Pastikan kamu memiliki hak untuk mempublikasikan logo, video latar, dan aset lain yang disertakan.
+- Database credentials are not stored in this repository. Do not commit a `.env` file or put passwords in source code.
+- Scraper logs and temporary files are excluded by Git.
+- This project is presented as a portfolio demonstration. Review authentication, input validation, and endpoint protections before deploying it to a public server.
+- Make sure you have permission to publish the included logos, background video, and other assets.
